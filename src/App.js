@@ -1,27 +1,28 @@
 import React, { useState } from 'react';
 import './App.css';
 import Form from "./components/Form";
-import Members from "./compnents/Members";
+import Members from "./components/Members";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  const [members, setMembers] = useState([
+    {
+      id: 1,
+      name: "Marissa",
+      email: "Marissa.shaffer1@gmail.com",
+      role: "Lambda Student"
+    }
+  ]);
 
+  const addNewMember = member => {
+    const newMember = setMembers([...members, member]);
+  };
+
+  return(
+    <div className="App">
+      <h1>Team Builder</h1>
+      <Form addNewMember={addNewMember} />
+      <Members member={members} />
+    </div>
+  )
+}
 export default App;

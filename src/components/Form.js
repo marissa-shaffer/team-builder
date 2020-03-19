@@ -10,7 +10,7 @@ const Form = props => {
     ]);
 
     const handleChanges = event => {
-    setMember({...member, [even.target.name]: event.target.value });
+    setMember({...member, [event.target.name]: event.target.value });
     };
 
     const submitHandler = event => {
