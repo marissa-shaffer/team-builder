@@ -1,9 +1,10 @@
 import React from "react";
 
 const Members = props => {
+    console.log(props);
     return(
         <div className="member-list">
-            {props.members.map(member =>(
+            {props.member.map(member =>(
                 <div className="member" key={member.id}>
                         <div className="member-list">
                         <h2>{member.name}</h2>
@@ -13,8 +14,7 @@ const Members = props => {
                 </div>
             ))}
         </div>
-    )
+    ) 
 }; 
-
 
 export default Members;
