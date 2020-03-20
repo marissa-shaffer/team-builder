@@ -20,6 +20,11 @@ const Form = props => {
         id: Date.now()
     };
 
+    props.addNewMember(newMember);
+    console.log(newMember);
+    setMember({name: "", email:"", role:""});
+    };
+
     return(
         <div>
             <form onSubmit= {submitHandler}>
@@ -30,6 +35,15 @@ const Form = props => {
                     name="name"
                     value={member.name}
                 />
+
+                <label htmlFor="email">Email: </label>
+                    <input 
+                        onChange= {handleChanges}
+                        id= "email"
+                        name= "email"
+                        value= {member.email} 
+                    />
+
                 <label htmlFor="role">Role: </label>
                 <input
                     onChange= {handleChanges}
@@ -41,6 +55,5 @@ const Form = props => {
         </div>
     ); 
 };
-}
 
 export default Form;

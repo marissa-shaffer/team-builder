@@ -3,7 +3,7 @@ import './App.css';
 import Form from "./components/Form";
 import Members from "./components/Members";
 
-function App() {
+const App = () => {
   const [members, setMembers] = useState([
     {
       id: 1,
@@ -23,6 +23,6 @@ function App() {
       <Form addNewMember={addNewMember} />
       <Members member={members} />
     </div>
-  )
+  );
 }
 export default App;
